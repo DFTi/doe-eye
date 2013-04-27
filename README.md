@@ -6,8 +6,10 @@ See example application with Backbone.js, Twitter Bootstrap, Node.js, Express, a
 
 this is an exploration into simplifying a the moderately complicated backend (caps) into a single Node.js app, hopefully with a simpler data model too... during this process I hope that the ideas of [gatekeeper]() can be further developed or implemented.
 
+Desired Platform:
+  * SmartOS  DTrace
+
 Features:
-  * SmartOS & DTrace
   
   * Provides an [api](https://npmjs.org/package/api)
 
@@ -56,7 +58,7 @@ Deploy Extras:
 
 Other Services:
   * [baker](https://github.com/Simbul/baker)
-  * [pdftohpubjs](https://npmjs.org/package/pdftohpubjs)
+  * [pdftohpubjs](https://npmjs.org/package/pdftohpubjs) See [my issue](https://github.com/fagbokforlaget/pdftohpubjs/issues/2)
 
 # Mongo? Riak? What?
 Some [slides](http://java.dzone.com/articles/why-we-migrated-mongodb-riak) about it ... google about it
