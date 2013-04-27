@@ -7,7 +7,8 @@ See example application with Backbone.js, Twitter Bootstrap, Node.js, Express, a
 
 this is an exploration into simplifying a the moderately complicated backend (caps) into a single Node.js app, hopefully with a simpler data model too... during this process I hope that the ideas of [gatekeeper]() can be further developed or implemented.
 
-We will use [Sails](https://github.com/balderdashy/sails) to quickly put it all together... getting it to play nice with riak should be simple enough... but we'll see.
+We will use [Sails](https://github.com/balderdashy/sails) & the [sails-riak](https://github.com/balderdashy/sails-riak) adapter
+
 
 Desired Platform:
   * SmartOS
