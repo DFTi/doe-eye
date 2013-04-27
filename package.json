@@ -1,0 +1,30 @@
+{
+  "author": "DFTi",
+  "name": "critique-server",
+  "description": "Backend for Critique web and iOS apps",
+  "version": "0.0.1",
+  "homepage": "",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "engines": {
+    "node": "0.9"
+  },
+  "scripts": {
+    "start": "coffee server.coffee",
+    "test": "mocha --compilers coffee:coffee-script"
+  },
+  "dependencies": {
+    "coffee-script": "1.6.x",
+    "express": "3.2.x",
+    "mongodb": "*"
+  },
+  "devDependencies": {
+    "chai": "*",
+    "mocha":"*",
+    "sinon": "1.5.x",
+    "sinon-chai": "2.3.x"
+  }
+}
