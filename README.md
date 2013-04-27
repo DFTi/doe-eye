@@ -6,12 +6,13 @@ See example application with Backbone.js, Twitter Bootstrap, Node.js, Express, a
 
 this is an exploration into simplifying a the moderately complicated backend (caps) into a single Node.js app, hopefully with a simpler data model too... during this process I hope that the ideas of [gatekeeper]() can be further developed or implemented.
 
+We will use [Sails](https://github.com/balderdashy/sails) to quickly put it all together... getting it to play nice with riak should be simple enough... but we'll see.
+
 Desired Platform:
-  * SmartOS  DTrace
+  * SmartOS
 
 Features:
-  
-  * Provides an [api](https://npmjs.org/package/api)
+  * Uses [api](https://npmjs.org/package/api) for interconnecting with other services (e.g. Turner path mapper) and its own subservices
 
   * Authenticates users locally or from LDAP by using [passport](https://github.com/jaredhanson/passport) or [everyauth](https://github.com/bnoguchi/everyauth), see [StackOverflow](http://stackoverflow.com/questions/8370045/authentication-solutions-for-node-js)
 
@@ -27,8 +28,9 @@ Features:
       * CatDV
 
   * Creates PDFs with 
-    [pdfkit-memory](https://npmjs.org/package/pdfkit-memory)
-    [pdf.js](https://npmjs.org/package/pdf.js)
+    * [pdfkit-memory](https://npmjs.org/package/pdfkit-memory)
+    * [pdf.js](https://npmjs.org/package/pdf.js)
+    * Research continues... [search npm](https://npmjs.org/search?q=pdf)
 
   * Ingests video and image uploads & [processes](https://npmjs.org/package/job) them in background
     * Utilizes ffmbc after I enhance [plain-ffmpeg](https://npmjs.org/package/plain-ffmpeg)
@@ -55,10 +57,6 @@ Deploy Requirements:
 Deploy Extras: 
   * Can use [Cluster](http://learnboost.github.io/cluster/) (great with Kue, for instance)
   * Can use [newrelic](https://github.com/newrelic/node-newrelic/)
-
-Other Services:
-  * [baker](https://github.com/Simbul/baker)
-  * [pdftohpubjs](https://npmjs.org/package/pdftohpubjs) See [my issue](https://github.com/fagbokforlaget/pdftohpubjs/issues/2)
 
 # Mongo? Riak? What?
 Some [slides](http://java.dzone.com/articles/why-we-migrated-mongodb-riak) about it ... google about it
