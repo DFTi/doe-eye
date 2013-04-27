@@ -5,6 +5,8 @@ app.configure ->
   app.use express.logger("dev")
   app.use express.bodyParser()
 
+debugger
+
 app.get "/medias", media.findAll
 app.get "/medias/:id", media.findById
 app.post "/medias", media.addMedia
