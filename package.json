@@ -1,31 +1,17 @@
 {
-  "author": "DFTi",
-  "name": "critique-server",
-  "description": "Backend for Critique web and iOS apps",
-  "version": "0.0.1",
-  "homepage": "",
-  "private": true,
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
-  "engines": {
-    "node": "0.9"
-  },
-  "scripts": {
-    "start": "coffee server.coffee",
-    "test": "mocha --compilers coffee:coffee-script"
-  },
-  "dependencies": {
-    "coffee-script": "1.6.x",
-    "express": "3.2.x",
-    "mongodb": "*"
-  },
-  "devDependencies": {
-    "node-inspector":"*",
-    "chai": "*",
-    "mocha":"*",
-    "sinon": "1.5.x",
-    "sinon-chai": "2.3.x"
-  }
+    "name": "critique-server",
+    "private": true,
+    "version": "0.0.0",
+    "description": "a Sails application",
+    "dependencies": {
+        "sails": "0.8.9"
+    },
+    "scripts": {
+        "start": "node app.js",
+        "debug": "node debug app.js"
+    },
+    "main": "app.js",
+    "repository": "",
+    "author": "",
+    "license": "MIT"
 }

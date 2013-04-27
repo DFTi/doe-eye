@@ -1,4 +1,5 @@
-## critique-server
+# critique-server
+### a Sails application
 
 Backend for Critique web and iOS apps
 

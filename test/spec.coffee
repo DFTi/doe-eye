@@ -1,7 +1,0 @@
-# http://visionmedia.github.io/mocha/
-# http://net.tutsplus.com/tutorials/javascript-ajax/better-coffeescript-testing-with-mocha/
-
-assert = require 'assert'
-describe 'Array', ->
-  it 'should return -1 when the value is not present', ->
-    assert.equal -1, [1,2,3].indexOf(5)
