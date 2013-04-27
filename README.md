@@ -7,6 +7,8 @@ See example application with Backbone.js, Twitter Bootstrap, Node.js, Express, a
 this is an exploration into simplifying a the moderately complicated backend (caps) into a single Node.js app, hopefully with a simpler data model too... during this process I hope that the ideas of [gatekeeper]() can be further developed or implemented.
 
 Features:
+  * SmartOS & DTrace
+  
   * Provides an [api](https://npmjs.org/package/api)
 
   * Authenticates users locally or from LDAP by using [passport](https://github.com/jaredhanson/passport) or [everyauth](https://github.com/bnoguchi/everyauth), see [StackOverflow](http://stackoverflow.com/questions/8370045/authentication-solutions-for-node-js)
@@ -21,6 +23,10 @@ Features:
     * Filesystem abstraction adapters:
       * LocalFolder
       * CatDV
+
+  * Creates PDFs with 
+    [pdfkit-memory](https://npmjs.org/package/pdfkit-memory)
+    [pdf.js](https://npmjs.org/package/pdf.js)
 
   * Ingests video and image uploads & [processes](https://npmjs.org/package/job) them in background
     * Utilizes ffmbc after I enhance [plain-ffmpeg](https://npmjs.org/package/plain-ffmpeg)
@@ -42,15 +48,17 @@ Deploy Requirements:
   * Runtime: node.js
   * Datastore: [Riak Cloud Storage](http://basho.com/riak-cloud-storage/)
   * Job Runner: [Kue](https://github.com/learnboost/kue) & Redis
+  * [HAProxy](http://haproxy.1wt.eu/) for load balancing
 
-Extras: 
+Deploy Extras: 
   * Can use [Cluster](http://learnboost.github.io/cluster/) (great with Kue, for instance)
   * Can use [newrelic](https://github.com/newrelic/node-newrelic/)
 
+Other Services:
+  * [baker](https://github.com/Simbul/baker)
+  * [pdftohpubjs](https://npmjs.org/package/pdftohpubjs)
 
 # Mongo? Riak? What?
 Some [slides](http://java.dzone.com/articles/why-we-migrated-mongodb-riak) about it ... google about it
   * [Why Not Mongo?](http://cl.ly/image/3Z3G3R452U3i)
   * [Why Riak?](http://cl.ly/image/353t0P1H3c2k)
-
-
