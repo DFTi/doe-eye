@@ -9,6 +9,13 @@ this is an exploration into simplifying a the moderately complicated backend (ca
 
 We will use [Sails](https://github.com/balderdashy/sails) & the [sails-riak](https://github.com/balderdashy/sails-riak) adapter
 
+However given that riak may not be ready for large file storage ("We [do not recommend](http://stackoverflow.com/questions/10491156/is-riak-recommended-for-storing-and-streaming-large-binary-files) storing objects over 50M"), then mongo's GridFS may be the answer given that you can [stream videos directly](http://stackoverflow.com/questions/4875671/can-you-stream-video-from-gridfs-mongodb-filesystem) from gridfs with nginx
+
+Sails [video tutorials](http://www.youtube.com/watch?v=AcwlZQb-cmQ&list=UUivrZ1-_NRRMHzMINdWjmyA&index=6) from a rails perspective
+
+Frontend Tools
+  I intend to drop-in the existing critique web front-end, but [this](https://github.com/balderdashy/mast) may be useful as well.
+
 
 Desired Platform:
   * SmartOS
