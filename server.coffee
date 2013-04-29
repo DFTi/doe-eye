@@ -1,3 +1,5 @@
+#!/usr/bin/env coffee
+
 http = require 'http'
 app = require('./app')
 

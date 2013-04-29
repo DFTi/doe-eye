@@ -3,11 +3,12 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
   </head>
   <body>
     <h1><%= title %></h1>
 		<p>Welcome to <%= title %></p>
-		<form action="/">
+		<form id="login" action="/">
 			<input name="username" type="text">
 			<input name="password" type="password">
 			<button>Log In</button>

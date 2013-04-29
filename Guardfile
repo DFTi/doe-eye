@@ -10,6 +10,7 @@ guard 'mocha-node', :mocha_bin => File.expand_path(File.dirname(__FILE__) + "/no
   watch(%r{^lib/(\w+)\.(js\.coffee|js|coffee)})        { |m| "spec/lib/#{m[1]}_spec.#{m[2]}" }
   watch(%r{spec/spec_helper\.(js\.coffee|js|coffee)}) { "spec" }
 	watch(%r{^views/(\w+).(ejs)}) { "spec" }
+  watch(%r{^public/javascripts/(\w+).(coffee|js)}) { "spec" }
 end
 
 # JavaScript only watchers
