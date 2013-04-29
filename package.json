@@ -1,26 +1,20 @@
 {
-    "name": "critique-server",
-    "private": true,
-    "version": "0.0.0",
-    "description": "a Sails application",
-    "dependencies": {
-        "sails":"0.8.9",
-        "coffee-script": "*"
-    },
-    "devDependencies": {
-        "chai": "*",
-        "mocha":"*",
-        "supertest":"*",
-        "sinon": "1.5.x",
-        "sinon-chai": "2.3.x"
-    },
-    "scripts": {
-        "test": "mocha --compilers coffee:coffee-script",
-        "start": "node app.js",
-        "debug": "node debug app.js"
-    },
-    "main": "app.js",
-    "repository": "",
-    "author": "",
-    "license": "MIT"
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js",
+		"test": "mocha --compilers coffee:coffee-script spec"
+  },
+	"devDependencies": {
+		"zombie":"*",
+		"mocha":"*",
+		"watch":"*"
+	},
+  "dependencies": {
+		"coffee-script":"*",
+    "express": "3.2.0",
+    "ejs": "*",
+    "less-middleware": "*"
+  }
 }

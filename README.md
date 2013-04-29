@@ -1,5 +1,6 @@
 # critique-server
-### a Sails application
+
+http://dotheweb.posterous.com/functional-testing-for-nodejs-using-mocha-and
 
 Backend for Critique web and iOS apps
 
