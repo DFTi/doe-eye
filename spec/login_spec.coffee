@@ -7,7 +7,7 @@ describe "Login", ->
 			site: 'http://localhost:5469'
 				
 	beforeEach (done) ->
-		@browser.visit('/', done)
+		@browser.visit('/', done)A
 
 	it "logs in", (done) ->	
 		@browser
