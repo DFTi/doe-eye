@@ -1,0 +1,8 @@
+{
+	"name": "doe-eye-api",
+	"readme": "README.md",
+	"dependencies": {
+		"express": "*",
+    "amqp": "*"
+	}
+}
