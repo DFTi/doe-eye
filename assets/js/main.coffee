@@ -1,2 +1,0 @@
-$('#login').click ->
-  alert 'hi'
