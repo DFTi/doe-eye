@@ -1,4 +1,5 @@
 $home = '/home/vagrant'
+$as_vagrant   = 'sudo -u vagrant -H bash -l -c'
 
 Exec {
   path => ['/usr/sbin', '/usr/bin', '/sbin', '/bin']
@@ -17,19 +18,24 @@ class apt_get_update {
 class { 'apt_get_update':
   stage => preinstall
 }
+package { 'curl':
+  ensure => installed
+}
+
+package { 'build-essential':
+  ensure => installed
+}
 
 package { 'git-core':
   ensure => installed
 }
 
-class mongodb {
-  init => 'upstart',
-  enable_10gen => true
+package { 'mongodb-server':
+  ensure => installed
 }
 
-class { 'rabbitmq::repo::apt':
-  pin => 900,
-  before => Class['rabbitmq::server']
+package { 'rabbitmq-server':
+  ensure => installed
 }
 
 exec { 'install_rvm':
@@ -41,5 +47,5 @@ exec { 'install_rvm':
 exec { 'install_ruby':
   command => "${as_vagrant} '${home}/.rvm/bin/rvm install 2.0.0 --latest-binary --autolibs=enabled && rvm --fuzzy alias create default 2.0.0'",
   creates => "${home}/.rvm/bin/ruby",
-  equire => Exec['install_rvm']
+  require => Exec['install_rvm']
 }
