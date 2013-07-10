@@ -1,5 +1,5 @@
 ### Welcome to Doe Eye
 
-#### Depencies
+### Development Environment
 
 - Vagrant
