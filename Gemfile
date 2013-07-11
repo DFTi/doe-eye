@@ -13,4 +13,5 @@ gem 'bson_ext'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
+	gem 'mongoid-rspec'
 end
