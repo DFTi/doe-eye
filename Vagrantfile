@@ -4,6 +4,7 @@ Vagrant::Config.run do |config|
   config.vm.host_name = 'doe-eye-dev-box'
   
   config.vm.forward_port 3000, 3000
+	config.vm.forward_port 27017, 27017
 
   config.vm.provision :puppet, 
     :manifests_path => 'puppet/manifests',
