@@ -5,6 +5,8 @@ class Vendor
 	field :name
 	field :api_key
 	field :api_password
-	has_many :tokens
+	
+	embeds_many :authorizations
+
 	validates_presence_of :name, :api_key, :api_password
 end

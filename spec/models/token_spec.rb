@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe Token do
+describe Authorization do
 	# validations
 end
