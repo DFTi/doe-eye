@@ -7,6 +7,7 @@ class Vendor
   field :api_password
   
   embeds_many :authorizations
-  
+  has_many :projects
+
   validates_presence_of :name, :api_key, :api_password
 end

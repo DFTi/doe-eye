@@ -17,3 +17,4 @@
 *.swp
 *.un*
 .vagrant
+.DS_Store
