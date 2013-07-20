@@ -20,8 +20,9 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.0'
 	gem 'mongoid-rspec'
 	gem 'capybara'
+  gem 'pry-rails'
 end
 
-group :development do
-  gem 'pry-rails'
+group :test do
+  gem 'factory_girl_rails'
 end
