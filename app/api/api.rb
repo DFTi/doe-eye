@@ -30,6 +30,22 @@ class API < Grape::API
     get do
       Project.all
     end
+
+    desc "Create a project record"
+    params do
+      group :project do
+        requires :name
+      end
+    end
+
+    post do
+      project = Project.new(params[:project])
+      if project.save
+        { project_id: :project.id }
+      else
+        error!(project.errors.full_messages.join("\n"), 400)
+      end
+    end
   end
 
   resource :documents do
