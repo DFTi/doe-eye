@@ -27,11 +27,18 @@ class API < Grape::API
   end
 
   resource :projects do
-    get do
-      Project.all
+    desc "Gets all projects for a vendor"
+    params do
+      requires :vendor_id
     end
 
-    desc "Create a project record"
+    route_param :vendor_id do
+      get do
+        Project.where(vendor_id: params[:vendor_id])
+      end
+    end
+
+    desc "Create a new project"
     params do
       group :project do
         requires :name
@@ -39,9 +46,10 @@ class API < Grape::API
     end
 
     post do
-      project = Project.new(params[:project])
+      safe_params = ActionController::Parameters.new(params).permit(:project => [:name])
+      project = Project.new(safe_params[:project])
       if project.save
-        { project_id: :project.id }
+        { project_id: project.id }
       else
         error!(project.errors.full_messages.join("\n"), 400)
       end
