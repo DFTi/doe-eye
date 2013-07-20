@@ -18,8 +18,8 @@ gem 'grape'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
-	gem 'mongoid-rspec'
-	gem 'capybara'
+  gem 'mongoid-rspec'
+  gem 'capybara'
   gem 'pry-rails'
 end
 
