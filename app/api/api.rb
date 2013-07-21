@@ -1,4 +1,3 @@
-module API
 class API < Grape::API
 	prefix 'api'
   version 'v1', using: :path
@@ -66,6 +65,16 @@ class API < Grape::API
       present project 
     end
 
+    desc 'Returns all documents for a project'
+    params do
+      requires :access_token, type: String, desc: "Vendor Access Token"
+      requires :id
+    end
+
+    get "/:id/documents" do
+      Document.where(project_id: params[:id])
+    end
+
     desc "Create a new project"
     params do
       requires :access_token, type: String, desc: "Vendor access Token" 
@@ -86,17 +95,16 @@ class API < Grape::API
     end
   end
 
-  resource :documents do
-    desc 'Returns all documents for a project'
+  resource :documents do 
+    desc "Returns the document details"
     params do
-      requires :project_id
+      requires :access_token, type: String, desc: "Vendor Access Token"
+      requires :id, type: String, desc: "Document Id"
     end
 
-    route_param :project_id do
-      get do
-        Document.where(project_id: params[:project_id])
-      end
+    get "/:id" do
+      document = Document.find(params[:id])
+      present document 
     end
   end
-end
 end
