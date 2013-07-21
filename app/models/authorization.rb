@@ -8,7 +8,7 @@ class Authorization
 	before_create :generate_access_token
 	before_create :set_expiration
 
-	embedded_in :vendor
+	belongs_to :vendor
 
 	def	set_expiration
 		self.expires_at = DateTime.now+30

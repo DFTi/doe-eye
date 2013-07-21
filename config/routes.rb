@@ -1,3 +1,3 @@
 DoeEye::Application.routes.draw do
-	mount API => '/'
+	mount API::API => '/'
 end
