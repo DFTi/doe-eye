@@ -14,7 +14,7 @@ gem "carrierwave-mongoid", git: "git://github.com/jnicklas/carrierwave-mongoid.g
 gem "mongoid-grid_fs", github: "ahoward/mongoid-grid_fs"
 gem 'bson_ext'
 gem 'grape'
-gem 'grape-entity'
+
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   gem 'mongoid-rspec'

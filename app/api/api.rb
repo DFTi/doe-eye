@@ -62,27 +62,28 @@ class API < Grape::API
 
     get "/:id" do
       authenticate!
-      project =Project.find(params[:id])
-      present project, with: Entities::ProjectEntity
+      project = Project.find(params[:id])
+      present project 
     end
-#    desc "Create a new project"
-#    params do
-#      group :project do
-#        requires :name
-#      end
-#    end
 
-#    post do
-#      safe_params = ActionController::Parameters.new(params).permit(:project => [:name])
-#      project = Project.new(safe_params[:project])
-#      if project.save
-#        { project_id: project.id }
-#      else
-#        error!(project.errors.full_messages.join("\n"), 400)
-#      end
-#
-#    end
-#  end
+    desc "Create a new project"
+    params do
+      requires :access_token, type: String, desc: "Vendor access Token" 
+      group :project do
+        requires :name
+      end
+    end
+
+    post do
+      authenticate!
+      safe_params = ActionController::Parameters.new(params).permit(:project => [:name])
+      project = current_vendor.projects.create(safe_params[:project])
+      if project.save
+        { project_id: project.id }
+      else
+        error!(project.errors.full_messages.join("\n"), 400)
+      end
+    end
   end
 
   resource :documents do
