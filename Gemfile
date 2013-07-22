@@ -20,6 +20,7 @@ group :development, :test do
   gem 'mongoid-rspec'
   gem 'capybara'
   gem 'pry-rails'
+  gem 'guard-rspec'
 end
 
 group :test do
