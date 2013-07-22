@@ -1,7 +1,8 @@
 class Document
   include Mongoid::Document
   include Mongoid::Timestamps
-   mount_uploader :file, FileUploader
+  mount_uploader :file, FileUploader
+
   field :title
   field :file  
   belongs_to :project

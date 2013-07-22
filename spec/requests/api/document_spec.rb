@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe API do
   before(:each) do
@@ -10,11 +10,11 @@ describe API do
   end
 
   describe Document do
-    before(:each) do
-      @document = @project.documents.create(title: "My Document")
-    end
-              
     describe "GET /api/v1/projects/:project_id/documents" do
+       before(:each) do
+        @document = @project.documents.create(title: "My Document")
+      end
+      
       it 'gets documents for a project' do
         get "/api/v1/projects/#{@project.id}/documents", access_token: @access_token
         response.status.should == 200
@@ -23,10 +23,21 @@ describe API do
     end
     
     describe "GET /api/v1/documents/:id" do
+      before(:each) do
+        @document = @project.documents.create(title: "My Document")
+      end
+    
       it 'gets a document' do
         get "/api/v1/documents/#{@document.id}", access_token: @access_token
         response.status.should == 200
         JSON.parse(response.body).should_not eq []
+      end
+    end
+
+    describe "POST /document" do
+      it "creates the document successfully" do
+        post "/api/v1/documents", access_token: @access_token, project_id: @project.id, document: attributes_for(:document)
+        response.should be_success
       end
     end
   end
