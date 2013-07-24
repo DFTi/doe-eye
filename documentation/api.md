@@ -1,5 +1,9 @@
 # Doe Eye API Documentation - v1
 
+## Introduction
+
+The aim of this document is to introduce Doe Eye
+
 ## Vendors
 
 #### POST /api/v1/vendors/login
