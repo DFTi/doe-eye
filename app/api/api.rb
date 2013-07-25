@@ -37,8 +37,9 @@ class API < Grape::API
     post :login do
       vendor = Vendor.where(:api_key => params[:api_key])
       if vendor
-        authorization = vendor.first.authorizations.create!
-        { :access_token => authorization.access_token }
+        @authorization = vendor.first.authorizations.gt(expires_at: DateTime.now.utc.to_s).first
+        @authorization ||= vendor.first.authorizations.create!
+        { :access_token =>  @authorization.access_token }
       else
         error!('Unauthorized.', 401)
       end
