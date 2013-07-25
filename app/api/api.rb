@@ -84,12 +84,13 @@ class API < Grape::API
       requires :access_token, type: String, desc: "Vendor access Token" 
       group :project do
         requires :name
+        requires :created_at
       end
     end
 
     post do
       authenticate!
-      safe_params = ActionController::Parameters.new(params).permit(:project => [:name])
+      safe_params = ActionController::Parameters.new(params).permit(:project => [:name, :created_at])
       project = current_vendor.projects.create(safe_params[:project])
       if project.save
         { project_id: project.id }
