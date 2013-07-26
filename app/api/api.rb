@@ -110,6 +110,7 @@ class API < Grape::API
     end
 
     get "/:id" do
+      authenticate!
       document = Document.find(params[:id])
       present document 
     end
