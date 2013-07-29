@@ -1,3 +1,13 @@
+production:
+  sessions:
+    default:
+      database: doe_eye_production
+      hosts:
+        - localhost:27017
+      options:
+  options:
+
+
 development:
   # Configure available database sessions. (required)
   sessions:
