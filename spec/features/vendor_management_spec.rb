@@ -18,7 +18,15 @@ feature 'Vendor management' do
 	end
 
 	scenario 'User updates a vendor' do
-    pending
+    @vendor = create(:vendor)
+    
+    visit edit_vendor_path(@vendor)
+     
+    fill_in 'vendor_name', with: 'test2'
+    
+    click_button 'Submit'
+
+    page.should have_content 'test2'
 	end
 	
 	scenario 'User deletes a vendor' do
