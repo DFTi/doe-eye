@@ -272,6 +272,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt-ruby
   bson_ext
   capybara
   carrierwave!

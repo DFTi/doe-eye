@@ -17,6 +17,8 @@ gem 'grape'
 gem 'unicorn'
 gem 'devise', git: 'https://github.com/plataformatec/devise.git', branch: 'rails4'
 gem 'haml-rails'
+gem 'bcrypt-ruby', require: 'bcrypt'
+
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   gem 'mongoid-rspec'
