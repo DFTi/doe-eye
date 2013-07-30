@@ -15,6 +15,8 @@ gem "mongoid-grid_fs", github: "ahoward/mongoid-grid_fs"
 gem 'bson_ext'
 gem 'grape'
 gem 'unicorn'
+gem 'devise', git: 'https://github.com/plataformatec/devise.git', branch: 'rails4'
+gem 'haml-rails'
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   gem 'mongoid-rspec'
