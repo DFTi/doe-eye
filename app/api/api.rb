@@ -2,7 +2,10 @@ class API < Grape::API
 	prefix 'api'
   version 'v1', using: :path
 	format :json
-  
+
+  rescue_from :all do |e|
+    rack_response({ message: "rescued from #{e.class.name}" })
+  end
   ### Helpers
   helpers do
     def authenticate!
