@@ -33,5 +33,4 @@ class VendorsController < ApplicationController
   def vendor_params
     params.require(:vendor).permit(:name, :api_key, :api_password)
   end
-
 end
