@@ -5,8 +5,10 @@ describe API do
     @vendor = create :vendor
     post "/api/v1/vendor/login", api_key: @vendor.api_key, api_password: @vendor.api_password
     @access_token = JSON.parse(response.body)["access_token"]
-
+    
     @project = @vendor.projects.create(name: "My Project")
+
+    @document_type = create :document_type
   end
 
   describe Document do
@@ -34,9 +36,9 @@ describe API do
       end
     end
 
-    describe "POST /document" do
+    describe "POST /documents" do
       it "creates the document successfully" do
-        post "/api/v1/documents", access_token: @access_token, project_id: @project.id, document: attributes_for(:document)
+        post "/api/v1/documents", access_token: @access_token, project_id: @project.id, document: attributes_for(:document), document_type_id: @document_type.id
         response.should be_success
       end
     end

@@ -3,9 +3,6 @@ class API < Grape::API
   version 'v1', using: :path
 	format :json
 
-  rescue_from :all do |e|
-    rack_response({ message: "rescued from #{e.class.name}" })
-  end
   ### Helpers
   helpers do
     def authenticate!
@@ -122,6 +119,7 @@ class API < Grape::API
     params do
       requires :access_token, type: String, desc: "Vendor Access Token"
       requires :project_id, type: String, desc: "Project Id"
+      requires :document_type_id, type: String, desc: "Document Type Id"
       group :document do
         requires :title
         requires :file
@@ -134,6 +132,7 @@ class API < Grape::API
       project = Project.find(params[:project_id])
       document = project.documents.create(safe_params[:document])
       document.file = params[:document][:file]
+      document.document_type = DocumentType.find(params[:document_type_id])
       if document.save
         { document_id: document.id }
       else
