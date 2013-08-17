@@ -4,5 +4,6 @@ class DocumentType
   
   field :name
   belongs_to :document
-
+  
+  validates_presence_of :name
 end
