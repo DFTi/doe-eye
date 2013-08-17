@@ -18,6 +18,7 @@ gem 'unicorn'
 gem 'devise', git: 'https://github.com/plataformatec/devise.git', branch: 'rails4'
 gem 'haml-rails'
 gem 'bcrypt-ruby', require: 'bcrypt'
+gem 'bootstrap-sass', '~> 2.3.2.1'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
