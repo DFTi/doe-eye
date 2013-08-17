@@ -11,7 +11,13 @@
       <div class="navbar-inner">
         <div class="container-fluid">
           <a class="brand" href="#">Doe Eye Administration</a>
+          <div class="navbar-text pull-right">
+            Logged in as: 
+          <% if admin_signed_in? %>
+            <%= current_admin.email %>
+          <% end %>
         </div>
+       </div>
       </div>
     </div>
     <div class="container-fluid">

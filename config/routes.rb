@@ -3,4 +3,6 @@ DoeEye::Application.routes.draw do
 	mount API => '/'
 
   resources :vendors
+
+  root to: "vendors#index"
 end
