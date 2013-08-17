@@ -1,0 +1,16 @@
+%table.table.table-bordered
+  %thead
+    %tr
+      %th
+        Name
+      %th
+        Actions
+  %tbody
+    - @vendors.each do |vendor|
+      %tr
+        %td
+          = link_to vendor.name, vendor_path(vendor)
+        %td
+          = link_to "Edit", edit_vendor_path(vendor), class: "btn btn-warning btn-mini"
+          = link_to "Delete", vendor_path(vendor), class: "btn btn-danger btn-mini"
+    
