@@ -1,5 +1,18 @@
-= form_for @vendor do |f|
-  = f.text_field :name
-  = f.text_field :api_key
-  = f.text_field :api_password
-  = f.submit "Submit", class: "btn btn-success"
+= form_for @vendor, html: { class: "form-horizontal" } do |f|
+  %fieldset
+    %legend New Vendor 
+    .control-group
+      = f.label :name, class: "control-label"
+      .controls
+        = f.text_field :name
+    .control-group
+      = f.label :api_key, class: "control-label"
+      .controls
+        = f.text_field :api_key
+    .control-group
+      = f.label :api_password, class: "control-label"
+      .controls
+        = f.text_field :api_password
+    .control-group
+      .controls
+        = f.submit "Submit", class: "btn btn-success"
