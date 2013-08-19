@@ -5,6 +5,11 @@ describe API do
 
   describe Vendor do
     describe "Authenticate Vendor" do
+      it "should return unauthorized with invalid credentials" do
+        post "/api/v1/vendor/login/", api_key: "tewqewq", api_password: ""
+        JSON.parse(response.body)["error"].should eq("Unauthorized.") 
+      end
+      
       it "should return access_token" do
         post "/api/v1/vendor/login/", api_key: vendor.api_key, api_password: vendor.api_password
         JSON.parse(response.body)["access_token"].should eq(vendor.authorizations.first.access_token) 
