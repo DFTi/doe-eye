@@ -14,13 +14,16 @@
           <div class="navbar-text pull-right">
             <% if admin_signed_in? %>
               Logged in as: <%= current_admin.email %>
-            <% end %>
+           	 <% end %>
         </div>
        </div>
       </div>
     </div>
+	
     <div class="container-fluid">
+			
       <div class="row-fluid">
+					 <% if admin_signed_in? %>
         <div class="span3">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
@@ -29,10 +32,11 @@
             </ul>
           </div>
         </div>
+		 <% end %>
         <div class="span9">
           <%= yield %>
-        </div>
-      </div>
+        </div>	
+      </div>	
     </div>
   </body>
 </html>

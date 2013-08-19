@@ -4,5 +4,5 @@ DoeEye::Application.routes.draw do
 
   resources :vendors
 
-  root to: "vendors#index"
+  root to: "vendor#index"
 end

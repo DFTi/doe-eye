@@ -1,4 +1,7 @@
 class VendorsController < ApplicationController
+  
+  before_filter :authenticate_admin!
+  
   def index
     @vendors = Vendor.all
   end
