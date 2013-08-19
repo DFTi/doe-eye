@@ -5,6 +5,7 @@ feature 'Document management' do
 	end
 
 	scenario 'Vendor requests a document' do
+    pending
 	end
 
 	scenario 'Vendor requests all documents by meta data' do

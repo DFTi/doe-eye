@@ -1,6 +1,7 @@
 DoeEye::Application.routes.draw do
-  devise_for :admins
 	mount API => '/'
+
+  devise_for :admins
 
   resources :vendors
 
