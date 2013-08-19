@@ -9,6 +9,7 @@ feature 'Vendor management' do
     fill_in "admin_password", with: "!Password"
     click_button "Sign in"
   end
+  
   let (:vendor_name) { 'test_vendor' }
   let (:vendor_api_key) { 'test_api_key' }
   let (:vendor_api_password) { 'test_api_password' }

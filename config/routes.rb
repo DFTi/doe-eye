@@ -3,7 +3,9 @@ DoeEye::Application.routes.draw do
 
   devise_for :admins
 
-  resources :vendors
+  resources :vendors do
+    resources :projects
+  end
 
   root to: "vendor#index"
 end
