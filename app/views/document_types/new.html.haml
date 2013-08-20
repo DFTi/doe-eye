@@ -1,0 +1,10 @@
+= form_for @document_type, html: { class: "form-horizontal" } do |f|
+  %fieldset
+    %legend New Vendor 
+    .control-group
+      = f.label :name, class: "control-label"
+      .controls
+        = f.text_field :name
+    .control-group
+      .controls
+        = f.submit "Save", class: "btn btn-success"
